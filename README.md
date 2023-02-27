@@ -1,6 +1,7 @@
-![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=CHANNEL+MDISK+BULK+POST+CONVERTER!;CREATED+BY+TECHNICAL+CYNITE!;A+ADVANCE+BOT+WITH+COOL+FEATURES!)
-</p>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
+![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=CHANNEL+MDISK+BULK+POST+CONVERTER!;𝙲𝚁𝙴𝙰𝚃𝙴𝙳+𝙱𝚈+𝚃𝙴𝙲𝙷𝙽𝙸𝙲𝙰𝙻+𝚁𝙰𝚅𝙸+𝙺𝙾𝙷𝙻𝙸!;A+ADVANCE+BOT+WITH+COOL+FEATURES!)
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 </p>
 <h1 align="center">
   <b>Channel-Mdisk-Converter</b>
