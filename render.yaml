@@ -1,11 +1,11 @@
 services:
   - type: web
     plan: free
-    name: PYRO-RENAME-BOT
+    name: Channel-Mdisk-Converter
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
-    repo: https://github.com/Dkmovie/PYRO-RENAME-BOT.git      
+    repo: https://github.com/Dkmovie/Channel-Mdisk-Converter.git      
     branch: main
     envVars:
       - key: BOT_TOKEN 
@@ -14,14 +14,20 @@ services:
         sync: false
       - key: API_HASH 
         sync: false
-      - key: FORCE_SUB 
+      - key: DROPLINK_API 
         sync: false
-      - key: DB_NAME 
+      - key: MDISK_API 
         sync: false
-      - key: DB_URL 
+      - key: CHANNELS 
         sync: false 
-      - key: START_PIC 
+      - key: CHANNEL_ID 
         sync: false
-      - key: ADMIN 
-        sync: false    
+      - key: ADMINS 
+        sync: false
+      - key: USERNAME 
+        sync: false
+      - key: DATABASE_NAME 
+        sync: false 
+      - key: DATABASE_URL
+        sync: false  
     autoDeploy: false 
