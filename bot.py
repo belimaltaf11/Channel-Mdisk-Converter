@@ -1,45 +1,46 @@
-import datetime
-from pyrogram import Client
-from config import *
-from database import db
-from helpers import temp
-from utils import broadcast_admins
-
-import logging
-import logging.config
-
-# Get logging configurations
-logging.config.fileConfig('logging.conf')
-logging.getLogger().setLevel(logging.INFO)
+from pyrogram import Client 
+from config import API_ID, API_HASH, BOT_TOKEN, FORCE_SUB, PORT
+from aiohttp import web
+from route import web_server
 
 class Bot(Client):
 
     def __init__(self):
         super().__init__(
-        "shortener",
-        api_id=API_ID,
-        api_hash=API_HASH,
-        bot_token=BOT_TOKEN,
-        plugins=dict(root="plugins")
+            name="renamer",
+            api_id=API_ID,
+            api_hash=API_HASH,
+            bot_token=BOT_TOKEN,
+            workers=200,
+            plugins={"root": "plugins"},
+            sleep_threshold=15,
         )
 
-    async def start(self):  
-        temp.START_TIME = datetime.datetime.now()
+    async def start(self):
         await super().start()
         me = await self.get_me()
-        self.username = '@' + me.username
-        temp.BOT_USERNAME = me.username
-        temp.FIRST_NAME = me.first_name
-
-        if not await db.get_bot_stats():
-            await db.create_stats()
-            
-        await broadcast_admins(self, '** Bot started successfully **')
-        logging.info('Bot started')
-
+        self.mention = me.mention
+        self.username = me.username 
+        self.force_channel = FORCE_SUB
+        if FORCE_SUB:
+            try:
+                link = await self.export_chat_invite_link(FORCE_SUB)                  
+                self.invitelink = link
+            except Exception as e:
+                print(e)
+                print("Make Sure Bot admin in force sub channel")             
+                self.force_channel = None
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"       
+        await web.TCPSite(app, bind_address, PORT).start()     
+        print(f"{me.first_name} 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 ⚡️⚡️⚡️")
+      
 
     async def stop(self, *args):
-        await broadcast_admins(self, '** Bot Stopped Bye **')
-        await super().stop()
-        logging.info('Bot Stopped Bye')
+        await super().stop()      
+        print("Bot Stopped")
+       
 
+bot=Bot()
+bot.run()
