@@ -18,16 +18,12 @@ services:
         sync: false
       - key: MDISK_API 
         sync: false
-      - key: CHANNELS 
-        sync: false 
       - key: CHANNEL_ID 
         sync: false
       - key: ADMINS 
         sync: false
       - key: USERNAME 
         sync: false
-      - key: DATABASE_NAME 
-        sync: false 
       - key: DATABASE_URL
         sync: false  
     autoDeploy: false 
