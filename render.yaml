@@ -9,7 +9,7 @@ services:
     branch: main
     envVars:
       - key: BOT_TOKEN 
-        "value": ""
+        "value": "5817794965:AAHSpZYSnCaNEcWO4KZdshBVJoeQ_FQ0_q8"
       - key: API_ID 
         "value": ""
       - key: API_HASH 
