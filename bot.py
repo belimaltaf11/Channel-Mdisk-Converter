@@ -1,31 +1,44 @@
-from pyrogram import Client 
+import datetime
+from pyrogram import Client
 from config import *
-from aiohttp import web
-from route import web_server
+from database import db
+from helpers import temp
+from utils import broadcast_admins 
 
-class Bot(Client):
+import logging
+import logging.config 
 
-    def __init__(self):
-        super().__init__(
-            name="renamer",
-            api_id=API_ID,
-            api_hash=API_HASH,
-            bot_token=BOT_TOKEN,
-            workers=200,
-            plugins={"root": "plugins"},
-            sleep_threshold=15,
-        )
-        app = web.AppRunner(await web_server())
-        await app.setup()
-        bind_address = "0.0.0.0"       
-        await web.TCPSite(app, bind_address, PORT).start()     
-        print(f"{me.first_name} 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 ⚡️⚡️⚡️")
-      
+# Get logging configurations
+logging.config.fileConfig('logging.conf')
+logging.getLogger().setLevel(logging.INFO) 
 
-    async def stop(self, *args):
-        await super().stop()      
-        print("Bot Stopped")
-       
+class Bot(Client): 
 
-bot=Bot()
-bot.run()
+    def __init__(self):
+        super().__init__(
+        "shortener",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        bot_token=BOT_TOKEN,
+        plugins=dict(root="plugins")
+        ) 
+
+    async def start(self):  
+        temp.START_TIME = datetime.datetime.now()
+        await super().start()
+        me = await self.get_me()
+        self.username = '@' + me.username
+        temp.BOT_USERNAME = me.username
+        temp.FIRST_NAME = me.first_name 
+
+        if not await db.get_bot_stats():
+            await db.create_stats()
+            
+        await broadcast_admins(self, '** Bot started successfully **')
+        logging.info('Bot started')
+
+
+    async def stop(self, *args):
+        await broadcast_admins(self, '** Bot Stopped Bye **')
+        await super().stop()
+        logging.info('Bot Stopped Bye')
