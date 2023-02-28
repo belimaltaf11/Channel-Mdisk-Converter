@@ -9,21 +9,21 @@ services:
     branch: main
     envVars:
       - key: BOT_TOKEN 
-        sync: false
+        "value": ""
       - key: API_ID 
-        sync: false
+        "value": ""
       - key: API_HASH 
-        sync: false
+        "value": ""
       - key: DROPLINK_API 
-        sync: false
+        "value": ""
       - key: MDISK_API 
-        sync: false
+        "value": ""
       - key: CHANNEL_ID 
-        sync: false
+        "value": ""
       - key: ADMINS 
-        sync: false
+        "value": ""
       - key: USERNAME 
-        sync: false
+        "value": ""
       - key: DATABASE_URL
         sync: false  
     autoDeploy: false 
