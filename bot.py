@@ -26,8 +26,7 @@ class Bot(Client):
             plugins={"root": "plugins"},
             sleep_threshold=15,
         )
-
-    async def start(self):  
+    async def start(self):  
         temp.START_TIME = datetime.datetime.now()
         await super().start()
         me = await self.get_me()
