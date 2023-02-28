@@ -36,7 +36,7 @@ class Bot(Client):
         await app.setup()
         bind_address = "0.0.0.0"       
         await web.TCPSite(app, bind_address, PORT).start()     
-        print(f"{me.first_name} 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 ⚡️⚡️⚡️")
+        
 
         if not await db.get_bot_stats():
             await db.create_stats()
