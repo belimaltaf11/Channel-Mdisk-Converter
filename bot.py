@@ -17,13 +17,15 @@ logging.getLogger().setLevel(logging.INFO)
 class Bot(Client): 
 
     def __init__(self):
-        super().__init__(
-        "shortener",
-        api_id=API_ID,
-        api_hash=API_HASH,
-        bot_token=BOT_TOKEN,
-        plugins=dict(root="plugins")
-        ) 
+        super().__init__(
+            name="converter",
+            api_id=API_ID,
+            api_hash=API_HASH,
+            bot_token=BOT_TOKEN,
+            workers=200,
+            plugins={"root": "plugins"},
+            sleep_threshold=15,
+        )
 
     async def start(self):  
         temp.START_TIME = datetime.datetime.now()
