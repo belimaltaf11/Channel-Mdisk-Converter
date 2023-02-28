@@ -32,6 +32,7 @@ class Bot(Client):
         self.username = '@' + me.username
         temp.BOT_USERNAME = me.username
         temp.FIRST_NAME = me.first_name 
+
    app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"       
