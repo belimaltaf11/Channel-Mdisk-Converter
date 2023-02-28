@@ -11,19 +11,19 @@ services:
       - key: BOT_TOKEN 
         "value": "5817794965:AAHSpZYSnCaNEcWO4KZdshBVJoeQ_FQ0_q8"
       - key: API_ID 
-        "value": ""
+        "value": "14438754"
       - key: API_HASH 
-        "value": ""
+        "value": "baeb7d71bd10d8b5d8a97fce7ad9707d"
       - key: DROPLINK_API 
-        "value": ""
+        "value": "2c364f0262cd8c7d5848697aa0dbe1d41e5e7377"
       - key: MDISK_API 
-        "value": ""
+        "value": "Vj3WrvQ78OVuOpk32lp4"
       - key: CHANNEL_ID 
-        "value": ""
+        "value": "-1001819389376"
       - key: ADMINS 
-        "value": ""
+        "value": "5808599296"
       - key: USERNAME 
-        "value": ""
+        "value": "movie_a1"
       - key: DATABASE_URL
-        sync: false  
+        "value": "mongodb+srv://cccc:cccc@cluster0.7xrqyz3.mongodb.net/?retryWrites=true&w=majority"  
     autoDeploy: false 
