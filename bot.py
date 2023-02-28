@@ -1,5 +1,7 @@
-import datetime
 from pyrogram import Client
+from aiohttp import web
+from route import web_server
+import datetime
 from config import *
 from database import db
 from helpers import temp
@@ -30,6 +32,11 @@ class Bot(Client):
         self.username = '@' + me.username
         temp.BOT_USERNAME = me.username
         temp.FIRST_NAME = me.first_name 
+   app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"       
+        await web.TCPSite(app, bind_address, PORT).start()     
+        print(f"{me.first_name} 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 ⚡️⚡️⚡️")
 
         if not await db.get_bot_stats():
             await db.create_stats()
