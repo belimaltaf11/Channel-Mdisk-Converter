@@ -28,4 +28,6 @@ services:
         "value": "mongodb+srv://cccc:cccc@cluster0.7xrqyz3.mongodb.net/?retryWrites=true&w=majority"  
       - key: PYTHON_VERSION
         "value": "3.10.2"
+      - key: START_CMD
+        "value": "gunicorn app:app & python main.py"
     autoDeploy: false 
