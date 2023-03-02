@@ -4,8 +4,6 @@ from config import *
 from database import db
 from helpers import temp
 from utils import broadcast_admins
-from aiohttp import web
-from route import web_server
 
 import logging
 import logging.config
@@ -35,12 +33,6 @@ class Bot(Client):
 
         if not await db.get_bot_stats():
             await db.create_stats()
-    app = web.AppRunner(await web_server())
-        await app.setup()
-        bind_address = "0.0.0.0"       
-        await web.TCPSite(app, bind_address, PORT).start()
-
-
             
         await broadcast_admins(self, '** Bot started successfully **')
         logging.info('Bot started')
@@ -50,3 +42,4 @@ class Bot(Client):
         await broadcast_admins(self, '** Bot Stopped Bye **')
         await super().stop()
         logging.info('Bot Stopped Bye')
+
