@@ -26,4 +26,6 @@ services:
         "value": "movie_a1"
       - key: DATABASE_URL
         "value": "mongodb+srv://cccc:cccc@cluster0.7xrqyz3.mongodb.net/?retryWrites=true&w=majority"  
+      - key: PYTHON_VERSION
+        "value": "3.10.2"
     autoDeploy: false 
