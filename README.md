@@ -7,7 +7,7 @@
   <b>Channel-Mdisk-Converter</b>
 </h1>
 
-## TG Bot [@CyniteBackup](t.me/CyniteBackup)
+## TG Bot [RAVI KOHLI](https://t.me/movie_a1)
 
 ## Credits 
 
