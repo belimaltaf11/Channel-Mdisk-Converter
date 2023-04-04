@@ -9,15 +9,15 @@ def is_enabled(value, default):
         return default
 
 # Mandatory variables for the bot to start
-API_ID = int(os.environ.get("API_ID", "14438754"))
-API_HASH = os.environ.get("API_HASH", "baeb7d71bd10d8b5d8a97fce7ad9707d")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "5817794965:AAHSpZYSnCaNEcWO4KZdshBVJoeQ_FQ0_q8")
-DROPLINK_API = os.environ.get("DROPLINK_API", "2c364f0262cd8c7d5848697aa0dbe1d41e5e7377")
-MDISK_API = os.environ.get("MDISK_API", "Vj3WrvQ78OVuOpk32lp4")
+API_ID = int(os.environ.get("API_ID", "29081699"))
+API_HASH = os.environ.get("API_HASH", "4c4beb5bf57a6d52a4cda249a98f0980")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "6233366267:AAF9Jxt2eAU6CBnk4Zp1mlk7kxSOc8o2ics")
+DROPLINK_API = os.environ.get("DROPLINK_API", "d65c658c53d5cf2849f0a004124c18fc80642151")
+MDISK_API = os.environ.get("MDISK_API", "1QYeNzQTxPxUwmIT8Hvb")
 ADMINS = list(int(i.strip()) for i in os.environ.get("ADMINS").split(",")) if os.environ.get("ADMINS") else []
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertorBotpro")
-DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://cccc:cccc@cluster0.7xrqyz3.mongodb.net/?retryWrites=true&w=majority")
-WEBSITE = os.environ.get('WEBSITE', 'https://droplink.co')
+DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://short:sh9824786@cluster0.szric3m.mongodb.net/?retryWrites=true&w=majority")
+WEBSITE = os.environ.get('WEBSITE', 'https://url.staus.in')
 
 #  Optionnal variables
 INCLUDE_DOMAIN = list(i.strip() for i in os.environ.get("INCLUDE_DOMAIN").split(",")) if os.environ.get("INCLUDE_DOMAIN") else []
